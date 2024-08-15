@@ -20,7 +20,7 @@ insert into Student_tbl(id, name, email, gender) values(1, 'Ebad uddin ahmed','e
 insert into Student_tbl(id, name, email, gender, city) values(2, 'ALi Ahmed Sheikh','ali@gmail.com', 'Male', 'Lahore')
 insert into Student_tbl(id, name, email, gender, Age) values(3, 'Rameez','rameez@gmail.com', 'Male', '20')
 
--- command to display table data
+-- command to display table data (DML)
 select * from Student_tbl;
 
 -- DDL Commands(Data Definition language)
@@ -38,4 +38,26 @@ alter table Student_tbl add gender varchar(30);
 alter table Student_tbl add Age varchar(255) check(Age > 18);
 
 -- command to delete the table
-drop table Student_tbl;
+drop table Student_tbl;2
+
+-- Data manipulation language (DML)
+-- SELECT, Insert, Update, Delete
+
+select name, email from Student_tbl;
+
+select * from Student_tbl;
+
+update Student_tbl set name = 'Ali Ahmed' where id = 2;
+
+delete from Student_tbl where id = 2;
+
+
+
+
+
+
+
+
+
+
+

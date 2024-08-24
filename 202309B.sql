@@ -96,5 +96,58 @@ VALUES
 	select count(designation) as CountOfDesignation from employee where designation = 'Engineer';
 
 
-	-- joins in sql server
+		-- joins in sql server
+	-- joins are used when deal with two or more columns and retrieve the result based on the relationship
+
+	
+
+	CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50)
+);
+
+
+INSERT INTO Departments (DepartmentID, DepartmentName)
+VALUES
+    (1, 'HR'),
+    (2, 'IT'),
+    (3, 'Finance'),
+	(4, 'Software'),
+    (5, 'Engineering'),
+	(6, 'Industrial'),
+    (7, 'QA'),
+    (8, 'Admin'),
+	(9, 'Mechanical'),
+    (10, 'parts');
+	select * from employee;
+	select * from Departments;
+
+	select fname, lname, Designation, DepartmentName from employee inner join Departments on Departments.DepartmentID = employee.Dept;
+	select fname, lname, Designation, DepartmentName from employee left join Departments on Departments.DepartmentID = employee.Dept;
+	select fname, lname, Designation, DepartmentName from employee right join Departments on Departments.DepartmentID = employee.Dept;
+	select fname, lname, Designation, DepartmentName from employee full join Departments on Departments.DepartmentID = employee.Dept;
+
+
+	-- joins queries execution
+
+	CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    CategoryID INT
+
+);
+
+CREATE TABLE Categories (
+    CategoryID INT PRIMARY KEY,
+    CategoryName VARCHAR(100)
+);
+
+INSERT INTO Products (ProductID, ProductName, CategoryID) VALUES
+(1, 'Laptop', 20),
+(2, 'Mouse', 20),
+(3, 'Keyboard', NULL);
+
+INSERT INTO Categories (CategoryID, CategoryName) VALUES
+(20, 'Electronics'),
+(30, 'Office Supplies');
 
